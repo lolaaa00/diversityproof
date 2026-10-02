@@ -1,0 +1,169 @@
+DIVERSITYPROOF - LOLA / CLAUDE FINISH HANDOFF
+=============================================
+
+LOLA: YOU will unzip the ZIP yourself.
+Do not ask Claude to find or extract the ZIP.
+
+1. Unzip the archive into a normal working folder, for example:
+   C:\\Users\\<YOU>\\Desktop\\diversityproof
+
+2. Open the EXTRACTED diversityproof folder in Claude Code.
+
+3. Paste the prompt below into Claude.
+
+---------------------------------------------------------------------
+PROMPT FOR CLAUDE
+---------------------------------------------------------------------
+
+You are finishing an already-designed contract-only GenLayer repository named
+DiversityProof. Work in the folder I have already extracted and opened.
+
+Do not redesign the product. Treat the existing README, contract, tests and docs
+as the authoritative specification unless you discover a genuine technical
+contradiction with the 61999 runtime.
+
+ABSOLUTE ARCHITECTURE
+- Contract-only standalone reusable Intelligent Contract.
+- NO frontend.
+- NO Next.js/Vite/dashboard/wallet UI.
+- NO backend, database, API server, worker, cron, queue or centralized service.
+- Core deployable contract: contracts/diversityproof.py.
+
+ABSOLUTE NETWORK / TOOLING
+- Use GENLAYER STUDIONET ONLY.
+- Chain ID: 61999.
+- RPC: https://studio.genlayer.com/api
+- Do NOT use 61997.
+- Do NOT use Studio Dev / studionet-dev.
+- Use the repository-local GenLayer CLI 0.39.1 via npx.
+- Do NOT fall back to a globally installed 0.40.x RC or any other CLI.
+- Preserve the GenVM/Direct Mode compatibility of the existing 61999-style code.
+- Do not opportunistically migrate this repository to the Consensus v0.6 / 61997 stack.
+
+PRODUCT BOUNDARY
+DiversityProof certifies bounded observable behavioural diversity across a
+frozen committee and probe suite. It DOES NOT claim provider/model/owner
+independence, correctness, intelligence, or absence of collusion.
+Never broaden that claim in code or docs.
+
+CORE CONSENSUS INVARIANTS - DO NOT WEAKEN
+1. Committee definition is immutable after seal.
+2. Definition hash commits to thresholds, ordered members and ordered probes.
+3. Every measurement covers the complete member x probe matrix.
+4. Validators independently re-fetch/re-probe and independently re-classify;
+   they must not merely validate JSON shape.
+5. Only YES and NO are decisive.
+6. UNCLEAR and UNAVAILABLE never manufacture behavioural distance.
+7. Every member pair must satisfy min_decisive_probes or the whole measurement
+   is INCONCLUSIVE.
+8. Every sufficiently observed member pair must meet the configured distance
+   threshold for the whole committee to be DIVERSE.
+9. A single clone/near-clone pair must be able to make the committee
+   CONCENTRATED.
+10. is_diverse_for must pin the exact sealed definition and use the latest
+    measurement, not an old successful receipt.
+11. Historical measurement receipts remain immutable.
+12. Do not add admin overrides that can rewrite verdicts/certificates.
+13. Do not add money movement merely to make the project look complex.
+
+FIRST PHASE - AUDIT BEFORE CHANGING
+- Read every file.
+- Run: python scripts/preflight.py
+- Run Python syntax/compile checks.
+- Install/use the test dependencies in an isolated environment.
+- Run all Direct Mode tests.
+- Run genvm-lint if the pinned linter works in this environment.
+- Inspect the contract specifically for GenVM v0.2.x/Studionet compatibility,
+  storage serialization, unsupported Python patterns, bounds, malformed leader
+  payloads, URL/path admission, endpoint instability and malicious-leader cases.
+
+If anything fails, fix it without weakening the above invariants.
+Add adversarial tests for every real defect you find.
+
+TEST EXPECTATION
+The existing suite is a starting floor, not a target. Strengthen it where useful,
+especially:
+- malicious leader vector length/type/value attacks;
+- selective omission attempts;
+- all-pairs aggregation with 3-5 members;
+- threshold exact-boundary and one-basis-point cases;
+- low decisive coverage;
+- UNAVAILABLE and UNCLEAR handling;
+- definition substitution;
+- stale historical DIVERSE followed by latest CONCENTRATED;
+- owner permissions and retired committees;
+- URL/path edge cases;
+- classifier malformed output;
+- validator independent re-observation.
+
+LIVE FIXTURE PLAN
+For the live Studionet lifecycle, create stable PUBLIC, SIDE-EFFECT-FREE GET audit
+fixtures that the contract can read. Prefer repository-hosted/static fixtures or
+another transparent public source whose exact content is committed and auditable.
+Do not introduce an application backend as part of DiversityProof.
+
+The live evidence should demonstrate at minimum:
+A. a committee that reaches DIVERSE;
+B. a committee/measurement that reaches CONCENTRATED because two members share
+   the same behavioural profile;
+C. if practical, an INCONCLUSIVE result caused by insufficient decisive probes.
+
+DEPLOYMENT
+- Run npm install and verify `npx --no-install genlayer --version` is exactly
+  0.39.1 before any deployment.
+- Use only https://studio.genlayer.com/api.
+- Deploy the FINAL contract source only after tests/lint are clean.
+- Wait for FINALIZED state. Do not report ACCEPTED as finality.
+- Record contract address, deployment tx hash, finality, final git commit SHA,
+  and deployed-source hash/parity evidence.
+- Execute the live lifecycle above and record each tx hash and final state.
+- Update docs/DEPLOYMENT.md, README.md and SUBMISSION.md with VERIFIED facts only.
+  Never invent addresses, txs, test counts or finality.
+
+GITHUB
+Target repository:
+https://github.com/lolaaa00/diversityproof
+
+I (Lola) will have this repo/account available in my own environment.
+Initialize git if the extracted folder does not contain .git.
+Set the remote to the target above.
+Commit in sensible checkpoints and push to main.
+Do not push to ometere123.
+
+CI
+Add/repair a GitHub Actions workflow on Ubuntu that runs the deterministic
+preflight and the real Direct Mode suite. Keep CI aligned with the pinned
+61999-compatible test stack. Do not quietly swap network/toolchain to 61997.
+Push fixes until CI is green.
+
+FINAL AUDIT
+Before stopping, perform a skeptical reviewer audit:
+- Is this clearly more than "AI decides diversity"?
+- Is the validator genuinely independent?
+- Can uncertainty accidentally increase diversity?
+- Can one pair of clones hide behind other diverse members?
+- Can an old successful measurement keep a consumer gate open?
+- Does the definition hash bind everything consensus-relevant?
+- Are all claims in docs proven?
+- Is there any frontend/backend accidentally added?
+- Is every network reference 61999/Studionet?
+
+Only stop when the repository is as complete as it can be without fabricating
+external facts.
+
+FINAL REPORT
+Return:
+- final commit SHA;
+- GitHub Actions run URL/ID and result;
+- exact Direct Mode count;
+- exact preflight/lint results;
+- contract address;
+- deployment tx;
+- deployment finality;
+- source parity/hash evidence;
+- live lifecycle txs for DIVERSE / CONCENTRATED / INCONCLUSIVE as available;
+- remaining limitations, if any.
+
+---------------------------------------------------------------------
+END PROMPT
+---------------------------------------------------------------------
