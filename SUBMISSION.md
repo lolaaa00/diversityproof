@@ -57,3 +57,11 @@ All of those are deterministic.
 ## Network target
 
 This handoff is for **Studionet 61999 only** using the repository-local GenLayer CLI `0.39.1`. It must not be silently migrated to 61997.
+
+## Verified live deployment
+
+DiversityProof is finalized on Studionet at
+`0x46BFFeA797588783ae5FA850206930fB443A8Ebc`. Finalized reviewer lifecycles prove
+DIVERSE, clone-pair CONCENTRATED, and insufficient-evidence INCONCLUSIVE results.
+The exact transactions, definition hashes, certificate hashes, pairwise data,
+source-parity proof, and consumer hash-gate results are in `docs/DEPLOYMENT.md`.

@@ -205,6 +205,17 @@ CLI: repository-local 0.39.1
 
 It must **not** be switched to 61997 as part of finishing the repository.
 
+Finalized deployment:
+
+```text
+Contract: 0x46BFFeA797588783ae5FA850206930fB443A8Ebc
+Deployment tx: 0xdd97173fad3be3f649461c9d07fcf036b418ca473d2b2652fa4c955c80aef17f
+Result: FINALIZED / MAJORITY_AGREE
+```
+
+Finalized live evidence for DIVERSE, CONCENTRATED, and INCONCLUSIVE scenarios
+is recorded in `docs/DEPLOYMENT.md`.
+
 Install the repository-local CLI:
 
 ```bash
