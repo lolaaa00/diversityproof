@@ -3,12 +3,13 @@
 import json
 
 CONTRACT = "contracts/diversityproof.py"
+SDK_VERSION = "v0.2.16"
 PURPOSE = "Measure whether the registered agents exhibit materially different observable behaviours over the frozen probe suite."
 CLASSIFIER = r"You are measuring bounded behavioural diversity among autonomous systems"
 
 
 def create_committee(direct_deploy, min_decisive=2, threshold=5000):
-    contract = direct_deploy(CONTRACT)
+    contract = direct_deploy(CONTRACT, sdk_version=SDK_VERSION)
     cid = contract.create_committee("Treasury agents", PURPOSE, min_decisive, threshold)
     return contract, cid
 
@@ -72,7 +73,7 @@ def test_create_committee(direct_deploy):
 
 
 def test_rejects_bad_thresholds(direct_vm, direct_deploy):
-    contract = direct_deploy(CONTRACT)
+    contract = direct_deploy(CONTRACT, sdk_version=SDK_VERSION)
     with direct_vm.expect_revert("distance threshold"):
         contract.create_committee("x", PURPOSE, 1, 0)
     with direct_vm.expect_revert("min_decisive_probes"):
@@ -354,7 +355,7 @@ def test_validator_rejects_forged_well_typed_vector(direct_vm, direct_deploy):
 
 
 def test_status_dictionary_is_stable(direct_deploy):
-    contract = direct_deploy(CONTRACT)
+    contract = direct_deploy(CONTRACT, sdk_version=SDK_VERSION)
     dictionary = contract.get_status_dictionary()
     assert dictionary["measurement"]["DIVERSE"] == 1
     assert dictionary["measurement"]["CONCENTRATED"] == 2

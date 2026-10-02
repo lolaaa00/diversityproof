@@ -5,7 +5,7 @@ Verified locally on 2 October 2026:
 - Repository-local GenLayer CLI: **0.39.1**.
 - Python syntax compilation: **PASS** for the contract, Direct Mode tests, scripts, and example.
 - Static architecture/security preflight: **21/21 PASS**.
-- Real Direct Mode suite: **29 passed in 11.40s** after the final contract refactor.
+- Real Direct Mode suite: **29 passed in 30.15s** after pinning the Direct Mode SDK to available compatible release `v0.2.16`.
 - Target network inspection: **Genlayer Studio Network**, chain **61999**, RPC `https://studio.genlayer.com/api`.
 - Frontend/backend directories: absent by design.
 - Transparent static reviewer fixtures: committed under `fixtures/live/`.
