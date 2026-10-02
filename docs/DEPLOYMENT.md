@@ -21,6 +21,12 @@ Do **not** deploy this repository to 61997 and do not fall back to a globally in
 The repository-local CLI reports `0.39.1`. Network inspection reports alias
 `studionet`, chain ID `61999`, and RPC `https://studio.genlayer.com/api`.
 Preflight passes 21/21 and the real Direct Mode suite passes 29/29.
+GitHub Actions run `37004260271` passed against commit
+`b674a91542087af2f33f4964d5c434c98ec41ea6` with 29 tests and 0 failures.
+The repository contract source SHA-256 is
+`706f8e69a4b66a8b4c11dbdc8b5374e2c393544ee41ccee2d3e09762aba6f6f0`.
+This is a repository-source digest only; deployed-source parity is not claimed
+because no deployment was signed.
 
 The active local account is named `probe` at public address
 `0xaa18ecd158aec67c75a51768b747cb3247a21689`, with 8.2099 test GEN at the time

@@ -9,12 +9,13 @@ Verified locally on 2 October 2026:
 - Target network inspection: **Genlayer Studio Network**, chain **61999**, RPC `https://studio.genlayer.com/api`.
 - Frontend/backend directories: absent by design.
 - Transparent static reviewer fixtures: committed under `fixtures/live/`.
+- GitHub Actions: **PASS**, run `37004260271`, testing commit `b674a91542087af2f33f4964d5c434c98ec41ea6` with 29 passed and 0 failures.
+- Contract source SHA-256: `706f8e69a4b66a8b4c11dbdc8b5374e2c393544ee41ccee2d3e09762aba6f6f0`.
 
 Not claimed as verified:
 
 - GenVM SDK validation. `genvm-linter==0.11.0` could not load the contract's pinned historical runner archive from its current SDK bundle (`filename ... not found`). Its reachability warning was addressed by placing nondeterministic calls directly in the leader and validator callbacks, but the final validation attempt could not complete and was stopped after it hung while resolving that missing archive.
 - Live Studionet deployment. The active local account is named `probe`; no account named Lola is configured, so Codex did not assume signing authority or deploy.
 - Live DIVERSE, CONCENTRATED, or INCONCLUSIVE lifecycle results.
-- GitHub Actions status until the initial commit is pushed and the workflow completes.
 
 No deployment address, transaction hash, finality result, CI run, or live lifecycle result is fabricated here.
